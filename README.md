@@ -13,3 +13,5 @@ Objectives:
 - [ ] BLE HID
 - [ ] Data transfer - JSON - Serde?
   - [ ] Dynamic keyboard config
+
+- Changelog generator

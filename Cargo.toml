@@ -12,9 +12,9 @@ cortex-m-semihosting = "^0.5.0"
 panic-semihosting = "^0.6.0"
 
 # Nordic Semiconductor
-nrf-hal-common = { version = "^0.16.0", features = ["52840"] }
+nrf-hal-common = "^0.16.0"
 ### Nice!Nano
-nrf52840-pac = "^0.12.2"
+nrf52840-pac = { version = "^0.12.2", optional = true }
 
 # Raspberry Pi Pico
 rp2040-hal = "^0.7.0"
@@ -23,5 +23,4 @@ rp2040-hal = "^0.7.0"
 ssd1306 = "^0.7.1"
 
 [features]
-# nrf-52840 = ["nrf-hal-common/52840"]
-52840 = []
+52840 = ["dep:nrf52840-pac", "nrf-hal-common/52840"]

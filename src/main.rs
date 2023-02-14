@@ -10,7 +10,10 @@ use rtic::app;
 #[cfg(feature = "52840")]
 use nrf52840_hal as hal;
 
-#[app(device = hal::pac)]
+// This works but this is the pac and not hal
+// use nrf52840_pac as pac;
+
+#[app(device = crate::hal::pac)]
 mod app {
 
     use cortex_m_semihosting::{debug, hprintln};
@@ -23,14 +26,14 @@ mod app {
 
     #[init]
     fn init(_: init::Context) -> (Shared, Local, init::Monotonics) {
-        hprintln!("init").unwrap();
+        hprintln!("init");
 
         (Shared {}, Local {}, init::Monotonics())
     }
 
     #[idle]
     fn idle(_: idle::Context) -> ! {
-        hprintln!("idle").unwrap();
+        hprintln!("idle");
 
         debug::exit(debug::EXIT_SUCCESS);
 

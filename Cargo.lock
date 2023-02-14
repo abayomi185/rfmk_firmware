@@ -479,7 +479,9 @@ name = "rfmk_firmware"
 version = "0.1.0"
 dependencies = [
  "cortex-m-rtic",
+ "cortex-m-semihosting",
  "nrf-hal-common",
+ "nrf52840-pac",
  "panic-semihosting",
  "rp2040-hal",
  "ssd1306",
